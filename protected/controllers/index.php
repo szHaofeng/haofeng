@@ -2,7 +2,7 @@
 
 class IndexController extends Controller
 {
-	public $layout='';
+	public $layout='index';
 
     public function test() {
         //local
@@ -23,6 +23,41 @@ class IndexController extends Controller
     public function index() {
     	//$this->redirect("/enterprise/index");
         $this->redirect();
+    }
+	
+	public function test2() {
+    	//$this->redirect("/enterprise/index");
+        $this->redirect();
+    }
+	
+	public function login() {
+		$this->layout="";
+    	//$this->redirect("/enterprise/index");
+        $this->redirect();
+    }
+	
+	public function login_act() {
+		
+    	echo "<pre>";print_r($_POST);echo "</pre>";
+    }
+	
+	public function register() {
+		$this->layout="";
+    	//$this->redirect("/enterprise/index");
+        $this->redirect();
+    }
+	public function register_act() {
+		//$this->checkFormToken();
+		$validcode=CHash::random(8);
+        $password=Common::generatePWord(Req::args("password"),$validcode);
+		$data = array();
+    	$data['merchant_name']=Req::args("merchant_name");
+        $data['username']=Req::args("username");
+        $data['password']=$password;
+        $data['mobile']=Req::args("mobile");
+        $data['email']=Req::args("email");
+        $data['whole']=Req::args("whole");
+		echo "<pre>";print_r($data);print_r($_POST);echo "</pre>";
     }
 
     public function government(){

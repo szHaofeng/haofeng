@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>媒查查-全网无差价 就找媒查查-帐号登录</title>
+    <link rel="stylesheet" href="./static/frontend/layui/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./static/frontend/layui/css/layui.css" />
+
+</head>
+<body class="login_bg">
+<div class="main">
+    <div class="unit">
+        <div class="fl_div">
+            
+        </div>
+        
+<style>
+    .loginForm{
+        width:375px;
+        height:100%;
+        background-color: #ffffff;
+        border-radius: 5px;
+        position:absolute;
+        right:0;top:50%;
+        margin-top:-250px;
+        padding:20px 35px;
+		background-size: cover;
+    }
+	.htitle{
+		width:193px;
+		height:25px;
+		font-size:24px;
+		font-family:Microsoft YaHei;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+		line-height:30px;
+	}
+</style>
+<form class="loginForm" action="{url:/index/login_act}" method="post" id="main_form" name="main_form">
+	<div style="height: 40px;line-height: 0px;border-bottom:1px solid #e6e6e6;margin-bottom: 20px;">
+		<div class="htitle">媒体综合服务平台</div><a href="/"style="float: right; margin-top: -8px;font-family:Microsoft YaHei;font-weight:400;color:#666;">返回首页</a>
+	</div>
+    <div class="inputBox input" id="username">
+        <input type="text" placeholder="请输入用户名" id="user" name="username" class="icon_log_on_user"/>
+    </div>
+    <div class="inputBox">
+        <input type="password" placeholder="请输入密码" id="password" name="password" class="icon_log_on_password"/>
+    </div>
+    <div class="inputBox yanzCode">
+        <input type="text" placeholder="请输入验证码" id="code" name="code" class="icon_log_on_code"/>
+        <a href="javascript:void(0);"><img id="captcha_img" src="index.php?con=index&act=captcha" width="157px" onclick="this.src='index.php?con=index&act=captcha&random='+Math.random()"/></a>
+    </div>
+    <div class="errorTip" style="display:none;" id="errorTip">
+        <div class="tips">
+            <img src="./static/frontend/images/login/error.png"/>
+            <span></span>
+        </div>
+    </div>
+    <a class="submit" id="submit_btn" href="javascript:void(0);">登录</a>
+   
+	 <div class="titleUnit" id="reg_forgot" style="margin-bottom: 4px;">
+        <div class="unite" name="reg" style="padding-left:80px;"><a href="/index/account/reg.html">立即注册</a></div>
+        <div class="unite" name="forgot" style="padding-right:80px;"><a href="/index/account/forgot_pwd.html">忘记密码</a></div>
+    </div>
+	<p style="text-align:center;">合作咨询QQ：3008010996</p>
+    {token:key=form}
+</form>
+
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="./static/frontend/layui/layui.js"></script>
+<script type="text/javascript" src="./static/frontend/js/jquery.1.9.min.js"></script>
+<script src="./static/frontend/js/jquery-1.11.3.min.js"></script>
+
+<script>
+    var type=1;//默认用户名登录
+    var loginName="";
+    //错误信息提示消失
+    function errorTip(){
+        $("#errorTip").show();
+        var t=3;
+        errorTimer = setInterval(function () {
+            t--;
+            if(t==1){
+                clearInterval(errorTimer);
+                errorTimer = null;
+                $("#errorTip").hide();
+            }
+        },10000);
+    }
+    $("#submit_btn").click(function () {
+        var username,
+            password = $("#password").val(),
+            code = $("#code").val();
+        var reg=/^1[3-9]\d{9}$/;
+            username=$("#user").val();
+            if(!username){
+                errorTip();
+                $("#errorTip span").text("用户名不能为空！");
+                return;
+            }
+        
+        if(!password){
+            errorTip();
+            $("#errorTip span").text("密码不能为空！");
+            return;
+        }
+        if(!code){
+            errorTip();
+            $("#errorTip span").text("验证码不能为空！");
+            return;
+        }
+        $("#main_form").submit(); 
+    });
+    
+    $(document).on("keydown", function (e) {
+        if(e.keyCode === 13){
+            $("#submit_btn").trigger("click")
+        }
+    });
+</script>
+
+</body>
+</html>

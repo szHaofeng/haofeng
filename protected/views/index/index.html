@@ -1,110 +1,701 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>深圳前海区块链税务管理服务云平台</title>
-	<meta name="author" content="designer:sunxiangen, date:2019-10-12" />
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="{url:@favicon.ico}">
-	<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
-	<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
-	<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
-	<link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
-	<link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-	<!-- Preloader -->
-	<div class="preloader-it">
-		<div class="la-anim-1"></div>
-	</div>
-	
-	<!-- /Preloader -->
-    <div class="wrapper">
-		<!-- Top Menu Items -->
-		<div class="topheader">
-			<div class="pull-left">
-				<a href="{url:/index/index}">
-					<img src="{url:@static/images/logo_max2.png}"  style="height: 40px;" />
-				</a>
+
+
+<!--TOP_END-->
+		<div id="banner" style="top:80px;">
+			<div class="swiper-container">
+				<div class="swiper-wrapper" style="z-index:1;">
+					<div class="swiper-slide slide1">
+						
+					</div>
+					<div class="swiper-slide slide2">
+						
+					</div>
+					<div class="swiper-slide slide3">
+						
+					</div>
+					<div class="swiper-slide slide4">
+						
+					</div>
+				</div>
+				<div class="pagination" style="margin:-20px 0;z-index:2;position:absolute;">
+				</div>
 			</div>
-			<div class="pull-right">
-				<ul class="nav navbar-right top-nav pull-right">
+			<div class="news">
+				<ul class="_container w1200" id="news_roll">
+									<li>刚刚188****7969下了一个订单<span style="display:none"></span></li>
+									<li>刚刚151****4000下了一个订单<span style="display:none"></span></li>
+									<li>刚刚182****6422下了一个订单<span style="display:none"></span></li>
+									<li>刚刚183****3739下了一个订单<span style="display:none"></span></li>
+									<li>刚刚138****3610下了一个订单<span style="display:none"></span></li>
+									<li>刚刚187****8845下了一个订单<span style="display:none"></span></li>
+									<li>刚刚151****9019下了一个订单<span style="display:none"></span></li>
+									<li>刚刚176****6735下了一个订单<span style="display:none"></span></li>
+									<li>刚刚151****2694下了一个订单<span style="display:none"></span></li>
+									<li>刚刚189****1224下了一个订单<span style="display:none"></span></li>
+						
 				</ul>
 			</div>
+			
 		</div>
-		<div>
-			<div style="min-height:600px;">
-            	<img src="{url:@static/images/indexband.png}" style="width: 100%">
-            	<div style="height: 50px;"></div>
-				<div class="container">
-				    <div class="row">
-				        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
-				            <a href="{url:/enterprise/index}">
-				                <div class="square">
-				                    <div class="circular">
-				                        <img src="{url:@static/images/enterprise/service_platform.png}">
-				                    </div>
-				                    <p>企业云</p>  
-				                </div>
-				            </a>
-				        </div>
-				        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
-				            <a href="{url:/taxbureau/index}">
-				                <div class="square">
-				                    <div class="circular">
-				                        <img src="{url:@static/images/enterprise/business_tax_returns.png}">
-				                    </div>
-				                    <p>税务云</p>  
-				                </div>
-				            </a>
-				        </div>
-				        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
-				            <a href="{url:/index/government}">
-				                <div class="square">
-				                    <div class="circular">
-				                        <img src="{url:@static/images/enterprise/one_key_declaration.png}">
-				                    </div>
-				                    <p>政务云</p>  
-				                </div>
-				            </a>
-				        </div>
-				        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
-				            <a href="https://etax.shenzhen.chinatax.gov.cn/bszm-web/apps/views/beforeLogin/indexBefore/pageIndex.html">
-				                <div class="square">
-				                    <div class="circular">
-				                        <img src="{url:@static/images/enterprise/enterprise_information.png}">
-				                    </div>
-				                    <p>服务云</p>  
-				                </div>
-				            </a>
-				        </div>
-				    </div>
+		<div id="content" style="margin-top:80px;">
+			<div class="data_display">
+				<ul class="w1200">
+					<dl class="fl">
+						<dt class="fl">
+							<img src="./static/frontend/images/data_mainstream_media.png">
+						</dt>
+						<dd class="fl">
+							<h3><span class="value_num_1">6000</span>+</h3>
+							<p>主流媒体(家)</p>
+						</dd>
+						<div class="clear"></div>
+					</dl>
+					<dl class="fl">
+						<dt class="fl">
+							<img src="./static/frontend/images/data_self_media.png">
+						</dt>
+						<dd class="fl">
+							<h3><span class="value_num_2">15000</span>+</h3>
+							<p>自媒体(家)</p>
+						</dd>
+						<div class="clear"></div>
+					</dl>
+					<dl class="fl">
+						<dt class="fl">
+							<img src="./static/frontend/images/data_overseas_media.png">
+						</dt>
+						<dd class="fl">
+							<h3><span class="value_num_5">15000</span>+</h3>
+							<p>海外媒体资源</p>
+						</dd>
+						<div class="clear"></div>
+					</dl>
+					<dl class="fl">
+						<dt class="fl">
+							<img src="./static/frontend/images/data_media_owner.png">
+						</dt>
+						<dd class="fl">
+							<h3><span class="value_num_3">2377</span>+</h3>
+							<p>媒体主收益(元)</p>
+						</dd>
+						<div class="clear"></div>
+					</dl>
+					<dl class="fl">
+						<dt class="fl">
+							<img src="./static/frontend/images/data_soft_writing.png">
+						</dt>
+						<dd class="fl">
+							<h3><span class="value_num_4">1396</span>+</h3>
+							<p>软文代写收益(元)</p>
+						</dd>
+						<div class="clear"></div>
+					</dl>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			<div class="exclusive_advantage w1200">
+				<div class="exclusive_advantage_title title xScroll" data-animation="fadeInUp">
+					独家优势
 				</div>
-				<div class="clearfix"></div>
-				<div style="height: 50px;"></div>
-            </div>
-            <!-- Footer -->
-            <div class="clearfix"></div>
-			<div class="page-footer">
-		      <div class="footer-content"></div>
-		  </div>
-			<!-- /Footer -->
-        </div>
-			<!-- /Footer -->
-       
-    </div>
-     
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
-   	<!-- Slimscroll JavaScript -->
-	<script src="{url:@static/js/jquery.slimscroll.js}"></script>
-	<!-- Init JavaScript -->
-	<script src="{url:@static/js/init.js}"></script>
-</body>
-
-
-</html>
-
+				<div class="exclusive_advantage_box">
+					<dl class="xScroll fl" data-animation="fadeInUp">
+						<dt>
+							<img src="./static/frontend/images/advantage_exclusive_invitation.png" class="xScroll" data-animation="fadeIn">
+							<span style="left: 105px;top: 15px;"><img src="./static/frontend/images/advantage_exclusive_invitation_ornament.png"></span>
+						</dt>
+						<dd>
+							<h3>专属邀请收益</h3>
+							<p>专属邀请码收益机制，每人可拥有独立邀请码，<br />一次绑定终身收益</p>
+						</dd>
+					</dl>
+					<dl class="xScroll fl" data-animation="fadeInUp">
+						<dt>
+							<img src="./static/frontend/images/advantage_powerful.png" class="xScroll" data-animation="fadeIn">
+							<span style="left: 122px;top: 15px;"><img src="./static/frontend/images/advantage_powerful_ornament.png"></span>
+						</dt>
+						<dd>
+							<h3>强大媒体联盟</h3>
+							<p>人民日报海外网独家媒体优势，联合全国6000家<br />主流媒体，打造一手媒体资源供应联盟</p>
+						</dd>
+					</dl>
+					<dl class="xScroll fl" data-animation="fadeInUp">
+						<dt>
+							<img src="./static/frontend/images/advantage_high_efficiency.png" class="xScroll" data-animation="fadeIn">
+							<span style="left: 116px;top: 15px;"><img src="./static/frontend/images/advantage_high_efficiency_ornament.png"></span>
+						</dt>
+						<dd>
+							<h3>高效智能发布</h3>
+							<p>AI智能媒体发布加人工协助发布<br />等于高效出稿</p>
+						</dd>
+					</dl>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="equity w1200">
+				<div class="exclusive_advantage_title title xScroll" data-animation="fadeInUp">
+					权益保障
+				</div>
+				<div class="equity_box">
+					<ul>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity1"></span>
+							<h3>财务保障</h3>
+							<p>知名基金公司领投，<br />保障平台长期稳定发展</p>
+						</li>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity2"></span>
+							<h3>商业逻辑</h3>
+							<p>合理商业化运营模式，<br />给媒体主、广告主最大化收益</p>
+						</li>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity3"></span>
+							<h3>高效服务</h3>
+							<p>24小时内高效出稿，<br />编辑实时在线发布媒体</p>
+						</li>
+						<div class="clear"></div>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity4"></span>
+							<h3>资源强大</h3>
+							<p>一手媒体资源、<br />节省70%以上推广成本</p>
+						</li>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity5"></span>
+							<h3>专业服务</h3>
+							<p>专业为各大互联网企业、公关公司、<br />媒体从业者提供媒体资源供应</p>
+						</li>
+						<li class="xScroll" data-animation="fadeInUp">
+							<span class="equity6"></span>
+							<h3>对公合作</h3>
+							<p>正规公司合作，<br />可签合同、对公转账、开具增值税发票</p>
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="alliance_media" style="padding: 40px 0;">
+				<div class="w1200">
+					<div class="exclusive_advantage_title title xScroll alliance_media_title" data-animation="fadeInUp">
+						联盟媒体
+					</div>
+					<div class="alliance_media_table xScroll" data-animation="fadeInUp">
+						<ul>
+							<li class="active">央级媒体</li>
+							<li>门户媒体</li>
+							<li>财经媒体</li>
+							<li>教育媒体</li>
+							<li>自媒体</li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+					<div class="alliance_media_logo xScroll" data-animation="fadeInUp">
+						<ul class="active">
+							<li>
+								<img src="./static/frontend/images/renminwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/yangshiwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/xinhuawang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhonghuawang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/huanqiuwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/guangmingwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/qianlongwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguowang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/guojizaixian.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguoribao.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguoqingnianwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguojinjiwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguoxinwenwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/yangguangwang.png" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/zhongguotaiwanwang.png" />
+							</li>
+						</ul>
+						<ul>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-1.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-2.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-3.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-4.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-5.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-6.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-7.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-8.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-9.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-10.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-11.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-12.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-13.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-14.png" />
+								</li>
+								
+								<li>
+									<img src="./static/frontend/lmmt/menhumeiti/menhumeiti-15.png" />
+								</li>
+														
+						</ul>
+						<ul>
+							<li>
+								<img src="./static/frontend/images/caijing_beiqingwang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_bianniushi.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_erduo.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_fenghuangwang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_meihuawang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_quanjing.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_shenzhenxinwen.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_tengxun.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_touzhongwang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_touzijie.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_yangguang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_zhongguoqingnian.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_zhongguoxinwen.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/caijing_zhongzhengwang.jpg" />
+							</li>
+							<li>
+								<img src="./static/frontend/images/wangyi_caijing.jpg" />
+							</li>
+						</ul>
+						<ul>
+							
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-1.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-2.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-3.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-4.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-5.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-6.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-7.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-8.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-9.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-10.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-11.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-12.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-13.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-14.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/jiaoyumeiti/jiaoyu-15.png" />
+							</li>
+												
+						</ul>
+						<ul>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-1.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-2.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-3.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-4.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-5.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-6.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-7.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-8.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-9.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-10.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-11.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-12.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-13.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-14.png" />
+							</li>
+							
+							<li>
+								<img src="./static/frontend/lmmt/zimeiti/zimeiti-15.png" />
+							</li>
+												</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="usage_flow">
+				<div class="w1200">
+					<div class="exclusive_advantage_title title xScroll" data-animation="fadeInUp">
+						使用流程
+					</div>
+					<div class="usage_flow_tab xScroll" data-animation="fadeInUp">
+						<ul>
+							<li class="active">发布流程</li>
+							<li>邀请码收益流程</li>
+						</ul>
+					</div>
+					<div class="usage_flow_box xScroll" data-animation="fadeInUp">
+						<ul class="active">
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_register.png"></dt>
+									<dd>注册发稿平台</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_recharge.png"></dt>
+									<dd>充值发稿费用</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_backstage.png"></dt>
+									<dd>后台提交稿件</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_choice.png"></dt>
+									<dd>选择所需媒体</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_confirm.png"></dt>
+									<dd>确认媒体下单</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_feedback.png"></dt>
+									<dd>反馈发布链接</dd>
+								</dl>
+							</li>
+						</ul>
+						<ul style="margin-left:100px">
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_register.png"></dt>
+									<dd>注册发稿平台</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_invitation_code.png"></dt>
+									<dd>申请邀请码</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_new_user.png"></dt>
+									<dd>邀请新用户</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_profit.png"></dt>
+									<dd>拥有收益</dd>
+								</dl>
+							</li>
+							<li><span><img src="./static/frontend/images/flow_process.png"></span></li>
+							<li>
+								<dl>
+									<dt><img src="./static/frontend/images/flow_cash_withdrawal.png"></dt>
+									<dd>申请提现</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ai_intelligence">
+				<div class="w1200">
+					<div class="exclusive_advantage_title title xScroll" data-animation="fadeInUp">
+						AI智能媒体套餐
+					</div>
+					<div class="ai_intelligence_box xScroll" data-animation="fadeInUp">
+						<ul>
+							<li>
+								<a href="javascript:;">
+									<h3>包收录套餐</h3>
+									<p>20家媒体打包（包收录），出稿快，收录稳定，推广首选</p>
+									<h4 class="fl">150<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<h3>门户套餐</h3>
+									<p>30家综合门户小站发稿，不接违法稿件，不可带联系 方式</p>
+									<h4 class="fl">300<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<h3>教育套餐</h3>
+									<p>教育类门户发稿，出稿快，高权重，收录稳定，不接违法稿件，个别可带联系方式。</p>
+									<h4 class="fl">340<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<div class="clear"></div>
+							<li>
+								<a href="javascript:;">
+									<h3>健康套餐</h3>
+									<p>20家健康门户媒体低价发稿，不发负面、维权、违法 稿件</p>
+									<h4 class="fl">950<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<h3>站群套餐</h3>
+									<p>2站群发稿1000篇，收录好，权0/权1/权2/权3任选</p>
+									<h4 class="fl">1200<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<h3>科技套餐</h3>
+									<p>19家科技类头条大V号优势发稿，不挑稿件，精选优 质10万粉-100万粉大V号</p>
+									<h4 class="fl">7800<span>元</span></h4><h5 class="fr">立即购买</h5>
+									<div class="clear"></div>
+								</a>
+							</li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="consensus_academy">
+				<div class="w1200">
+					<div class="exclusive_advantage_title title xScroll" data-animation="fadeInUp">
+						共识学院
+					</div>
+					<div class="consensus_academy_box  xScroll" data-animation="fadeInUp">
+						<div class="consensus_academy_box_tab">
+								<span class="active">
+									
+								</span>
+								<span>
+									
+								</span>
+								<span>
+									
+								</span>
+						</div>
+						<div class="consensus_academy_box_con">
+								<ul>
+																	<li>
+										<dl>
+											<dt class="fl">
+												<img src="http://img.szmeicha.com/uploads/20200612/949fe47ed43c9b22cb499482320356a0.png" width="550px" height="500px">
+											</dt>
+											<dd class="fl">
+												<h3>618超强活动 Mc查带您&ldquo;互联网摆摊&rdquo;</h3>
+												<p>全网无差价  就找媒查查！</p>
+												<a href="/index/frontend/article_new/id/16.html">了解更多</a>
+											</dd>
+										</dl>
+									</li>
+																	<li>
+										<dl>
+											<dt class="fl">
+												<img src="http://img.szmeicha.com/uploads/20200604/4ec1353c4615f18c0fa52ca5c4443f97.png" width="550px" height="500px">
+											</dt>
+											<dd class="fl">
+												<h3>不想让软文成为广告，记住这几点！</h3>
+												<p>想要软文的整体质量不差，就必须选好这几个切入点。点击查看，小查为您分享的软文写作秘诀！</p>
+												<a href="/index/frontend/article_new/id/15.html">了解更多</a>
+											</dd>
+										</dl>
+									</li>
+																	<li>
+										<dl>
+											<dt class="fl">
+												<img src="http://img.szmeicha.com/uploads/20200527/f72c0f30930b9803be9d2e32a95e5b37.png" width="550px" height="500px">
+											</dt>
+											<dd class="fl">
+												<h3>六月不借势，怎么营销？</h3>
+												<p>夏天的风会永远吹着~哈哈 又到了小查最喜欢的6月份 一个充斥着炒酸奶 烧烤 西瓜的夏天 这干燥的天气把人的脸蒸的通红，想要在傍晚大快朵颐的撸串却发现不能实现烧烤自由？原因居然是上个月没有业绩提成？交完房租水电只剩餐费 老板说下个月再没有好的方案和业绩就让你回家种地？嘿 朋友 夏天就要来了！ 这种经济状况怎么能行呢！快快来看小查牺牲了自己的午休时光为您整理出的六月营销点。</p>
+												<a href="/index/frontend/article_new/id/14.html">了解更多</a>
+											</dd>
+										</dl>
+									</li>
+									
+									<div class="clear"></div>
+								</ul>
+						</div>
+					</div>
+					<div class="consensus_academy_more xScroll" data-animation="fadeInUp">
+						<a href="/index/frontend/article.html">查看更多</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 
