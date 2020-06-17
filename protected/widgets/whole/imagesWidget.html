@@ -2,15 +2,21 @@
 <script type="text/javascript" src="{url:@static/vendors/webuploader/webuploader.min.js}"></script>
 <style type="text/css">
     .headpic img {width: {$width}px;height:{$height}px; border: 1px solid #ccc;}
-    .webuploader-pick {width: {$width}px;}
+    .webuploader-pick {    width: 60px;
+    background: #fff;
+    height: 60px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    line-height: 60px;
+    padding: 0px;
+    font-size: 36px;}
 </style>
 <input type="hidden" name="{$imgname}" id="images" value="{$images}">
 <div class="headpic">
     <img src="{$images}" id="headpic_img">
+    <span id="imagePicker" title="{$title}"><i class="fa fa-plus"></i></span>
 </div>
-<div>
-    <span id="imagePicker">{$title}</span>
-</div>
+
 
 <script type="text/javascript">
     $(function(){
