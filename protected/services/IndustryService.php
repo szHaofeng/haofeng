@@ -7,7 +7,7 @@ class IndustryService
         } elseif($status==2) {
             $conditions=array("ne_status"=>1);
         } else {
-            $conditions=array();
+            $conditions=array('status'=>1);
         }
         
         $entity=new MerindustryEntity();
