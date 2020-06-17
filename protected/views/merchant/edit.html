@@ -61,7 +61,7 @@
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-3">营业执照：</label>
                 <div class="col-md-9 col-sm-9 col-xs-9">
-                  {set:$businesslicense=Common::getAvatar(isset($businesslicense)?$businesslicense:"")}
+                  {set:$businesslicense=Common::getAvatar(isset($businesslicense)?$businesslicense:"",'business.png')}
                   {widget:name=whole action=imagesWidget images=$businesslicense width=60 height=60 title=营业执照上传 imgname=businesslicense}
                 </div>
               </div>
