@@ -1,0 +1,29 @@
+<script type="text/javascript" src="{url:@static/js/common-min.js}"></script>
+<style>
+.col3{padding: 0;    float: left;width: 80px;}
+</style>
+<div id="area">
+	<div class="form-group" >
+		<label class="control-label col-md-3 col-sm-3 col-xs-3">地址：</label>
+		<div class="col-md-9 col-sm-9 col-xs-9" >
+			<select id="province"  class="form-control col3"  name="province" ><option value="0">省份</option></select>
+			<select id="city" class="form-control col3"  name="city"><option value="0">市</option></select>
+			<select id="county" class="form-control col3"  name="county"><option value="0">县/区</option></select>
+			<input pattern="^\d+,\d+,\d+$" id="test" type="text" style="visibility:hidden;width:0;" value="{$province},{$city},{$county}" alt="请选择完整地区信息！"><label></label>
+		</div>
+	</div>
+</div>
+<script>
+	 $("#area").Linkage({ url:"{url:/ajax/area_data}",selected:[{$province|0},{$city|0},{$county|0}],callback:function(data){
+		var text = new Array();
+		var value = new Array();
+		for(i in data[0]){
+		if(data[0][i]!=0){
+			text.push(data[1][i]);
+			value.push(data[0][i]);
+		}
+		}
+		$("#test").val(value.join(','));
+		FireEvent(document.getElementById("test"),"change");
+    }});
+</script>
