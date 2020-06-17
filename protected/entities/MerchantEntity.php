@@ -49,23 +49,6 @@ class MerchantEntity extends BaseEntity
                 return false;
             }
         }
-
-        if (!$id) {
-            $where="name='".Filter::sql(Req::post("name"))."'";
-            $m=$this->findWhere($where);
-            if ($m) {
-                $errmsg="账户已经被注册,请使用其他账号！";
-                return false;
-            }
-            $name=Filter::sql(Req::post("name"));
-            $extend["name"]=$name;
-            //$extend["full_name"]=$name;
-            $extend["status"]=1;
-            $validcode=CHash::random(8);
-            $password=Common::generatePWord(Req::post("password"),$validcode);
-            $extend["validcode"]=$validcode;
-            $extend["password"]=$password;
-        }
         return true;
     }
 
