@@ -156,12 +156,12 @@ button.navbar-toggle>span.icon-bar {
 /*banner*/
 
 #banner {
-    height: 600px;
+    height: 500px;
     position: relative;
 }
 
 .swiper-container {
-    height: 600px;
+    height: 500px;
     overflow: visible;
 }
 

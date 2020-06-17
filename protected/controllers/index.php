@@ -56,7 +56,9 @@ class IndexController extends Controller
         $data['password']=$password;
         $data['mobile']=Req::args("mobile");
         $data['email']=Req::args("email");
-        $data['whole']=Req::args("whole");
+        $data['industry']=Req::args("industry");
+        $data['businesslicense']=Req::args("businesslicense");
+        $data['mobile_code']=Req::args("mobile_code");
 		echo "<pre>";print_r($data);print_r($_POST);echo "</pre>";
     }
 
