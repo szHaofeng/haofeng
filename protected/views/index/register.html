@@ -33,13 +33,17 @@
     }
 	#headpic_img{vertical-align:initial;}
 </style>
-<form class="loginForm" action="{url:/index/register_act}" method="post" id="main_form" name="main_form">
-    <h4 class="title">注册申请</h4>
+<form class="loginForm" action="{url:/merreglogin/saveReg}" method="post" id="main_form" name="main_form">
+	{if:isset($errmsg)}
+		<h4 class="title"> <span style="color:red;">{$errmsg}</span></h4>
+	{else:}
+		<h4 class="title">注册申请</h4>
+	{/if}
     <div class="inputBox">
-        <input type="text" placeholder="请输入商户名称" id="merchant_name" name="merchant_name" class="icon_log_on_user"/>
+        <input type="text" placeholder="请输入商户名称" id="merchant_name" name="merchant_name" value="{$merchant_name}" class="icon_log_on_user"/>
     </div>
     <div class="inputBox">
-        <input type="text" placeholder="请输入账号(中文,英文,数字[6-12位])" id="username" name="username" class="icon_log_on_user"/>
+        <input type="text" placeholder="请输入账号(中文,英文,数字[6-12位])" id="name" name="name" value="{$name}" class="icon_log_on_user"/>
     </div>
     <div class="inputBox">
         <input type="password" placeholder="请输入密码(8-16位)" id="password" name="password" class="icon_log_on_password"/>
@@ -61,15 +65,16 @@
         <a href="javascript:void(0);"><img id="captcha_img" src="index.php?con=index&act=captcha" width="157px" onclick="this.src='index.php?con=index&act=captcha&random='+Math.random()"/></a>
     </div>
     <div class="inputBox">
-        <input type="tel" placeholder="请输入手机号" id="mobile" name="mobile" class="log_on_phone_number"/>
+        <input type="tel" placeholder="请输入手机号" id="mobile" name="mobile" value="{$mobile}" class="log_on_phone_number"/>
     </div>
 	<div class="inputBox verifCode">
         <input type="text" placeholder="请输入短信验证码" id="mobile_code" name="mobile_code" class="log_on_sms_code"/>
         <a href="javascript:void(0);" id="get_code">获取验证码</a>
     </div>
     <div class="inputBox">
-		<input  type="text"   placeholder="请输入邮箱" id="email" name="email" class="log_on_invitation_code"/>
+		<input  type="text"   placeholder="请输入邮箱" id="email" name="email" value="{$email}" class="log_on_invitation_code"/>
     </div>
+	<input type="hidden" name="type" value="0"/>
 	{token:key=form}
     <div class="privacy">
         <input type="checkbox" id="agree">
@@ -171,7 +176,7 @@
     });
     //注册
     $("#submit_btn").on("click",function(){
-        var username=$("#username").val();
+        var name=$("#name").val();
         var password=$("#password").val();
         var again_pwd=$("#again_pwd").val();
         var merchant_name = $("#merchant_name").val();
@@ -188,7 +193,7 @@
             $("#errorTip span").text("商户名称不能为空！");
             return false;
         }
-        if (!username){
+        if (!name){
             errorTip();
             $("#errorTip span").text("用户名不能为空！");
             return false;
@@ -248,6 +253,7 @@
             $("#errorTip span").text("请阅读并同意《服务条款》后再注册!");
             return false;
         }
+		
         $("#main_form").submit(); 
     });
 </script>

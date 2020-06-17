@@ -48,18 +48,20 @@ class IndexController extends Controller
     }
 	public function register_act() {
 		//$this->checkFormToken();
-		$validcode=CHash::random(8);
-        $password=Common::generatePWord(Req::args("password"),$validcode);
+	//	$validcode=CHash::random(8);
+      //  $password=Common::generatePWord(Req::args("password"),$validcode);
+		$Merindustry = new MerindustryEntity();
 		$data = array();
     	$data['merchant_name']=Req::args("merchant_name");
-        $data['username']=Req::args("username");
-        $data['password']=$password;
+        $data['name']=Req::args("username");
+        $data['password']=Req::args("password");
         $data['mobile']=Req::args("mobile");
         $data['email']=Req::args("email");
         $data['industry']=Req::args("industry");
         $data['businesslicense']=Req::args("businesslicense");
         $data['mobile_code']=Req::args("mobile_code");
-		echo "<pre>";print_r($data);print_r($_POST);echo "</pre>";
+		$a = $Merindustry->saveValidator($data,'');
+		echo "<pre>";print_r($data);print_r($_POST);print_r($a);echo "</pre>";
     }
 
     public function government(){
