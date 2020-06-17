@@ -1,7 +1,7 @@
 <style type="text/css">
     td >img.head-pic {width: 32px;height: 32px;}
 </style>
-<form action="{url:/taxmagr/index}" method="post" id="main_form" name="main_form">
+<form action="{url:/merchant/index}" method="post" id="main_form" name="main_form">
     <div class="panel-heading">
         <div class="pull-left">
             <div class="button-list">
@@ -72,10 +72,12 @@
                             <td>{$item["name"]}</td>
                             <td>{$item["merchant_name"]}</td>
                             <td>{$itme['phone']}</td>
+                            <td>{$itme['phone']}</td>
                             <td>{$item["email"]}</td>
                             <td>{$item["province"]}{$item["city"]}{$item["county"]}{$item["addr"]}</td>
                             <td>{$item["balance"]}</td>
                             <td>{$item["created_time"]}</td>
+                            <td>{$item["login_time"]}</td>
                             <td>{$item["login_time"]}</td>
                             <td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
                             <td style="text-align: center;">
@@ -85,7 +87,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul role="menu" class="dropdown-menu" data-refid="{$item['id']}">
-                                        {if:!$item["is_admin"]}
+                                       
                                         <li>
                                             <a class="op-edit"><i class="fa fa-fw fa-pencil"></i><span>修改</span></a>
                                         </li>
@@ -105,7 +107,7 @@
                                         <li>
                                             <a href="javascript:;" class="op-delete"><i class="fa fa-fw fa-trash"></i><span>删除</span></a>
                                         </li>
-                                        {/if}
+                                       
                                     </ul>
                                 </div>
                             </td>
@@ -132,7 +134,7 @@
         $('.op-password').on('click',function(){
             var id=$(this).parent().parent().attr("data-refid");
             if (id>0) {
-               open_dialog("{url:/taxmagr/password/password_id/}"+id,"修改密码",780,300,false);
+               open_dialog("{url:/merchant/password/password_id/}"+id,"修改密码",780,300,false);
             }
             return false;
         });
