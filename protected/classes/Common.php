@@ -7,11 +7,17 @@
  */
 class Common
 {
-    public static function getAvatar($avater) {
-        if ($avater)
+    public static function getAvatar($avater,$name=null) {
+        if ($avater){
             return $avater;
-        else
+        }else{
+
+            if($name!=null){
+                return str_replace("/index.php","",$_SERVER['PHP_SELF'])."/static/images/{$name}";
+            }
             return str_replace("/index.php","",$_SERVER['PHP_SELF'])."/static/images/avatar.png";
+        }
+           
     }
     //活动文档扩展名图表
     public static function getExtensionIcon($ext) {
