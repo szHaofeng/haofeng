@@ -28,6 +28,15 @@ class AdmMenu
             '/merindustry/index'=> array(
                 'name'=>'商户行业','parent'=>'merchant','icon'=>'fa-folder'
             ),
+            '/meruser/index'=> array(
+                'name'=>'商户账号','parent'=>'merchant','icon'=>'fa-folder'
+            ),
+            '/merdomain/index'=> array(
+                'name'=>'商户域名','parent'=>'merchant','icon'=>'fa-folder'
+            ),
+            '/mershenhe/index'=> array(
+                'name'=>'操作记录','parent'=>'merchant','icon'=>'fa-folder'
+            ),
         );
         //分组菜单
         $subMenu = array(

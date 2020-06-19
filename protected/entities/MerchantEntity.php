@@ -3,12 +3,13 @@ class MerchantEntity extends BaseEntity
 {
     protected $table="mer_merchant";
     protected $table_zh="商户管理";
+    protected $alias="mer";
     //状态样式
     public $lableMap = array(
         "0"=>"default",
         "1"=>"primary",
-        "2"=>"warning",
-        "3"=>"success",
+        "2"=>"success",
+        "3"=>"warning",
         "4"=>"danger",
         "5"=>"primary"
     );
@@ -19,23 +20,24 @@ class MerchantEntity extends BaseEntity
         "2"=>"正常",
         "3"=>"禁止",
     );
-    
+    public $feestatus = array (
+        "1"=>"正常",
+        "2"=>"欠费",
+    );
     protected function parseRow($row) {
-
         $row=parent::parseRow($row);
-
-        if (array_key_exists("is_grantofetp", $row) && $row['is_grantofetp']) 
-            $row['grantofetp']='是';
-        else
-            $row['grantofetp']=' 否';
-        if (array_key_exists("is_grantofgov", $row) && $row['is_grantofgov']) 
-            $row['grantofgov']='是';
-        else
-            $row['grantofgov']=' 否';
-
+        if(array_key_exists('fee_status',$row) && $row['fee_status']){
+            $row["feestatusname"]=Common::statusMap($this->feestatus,$row["fee_status"]);
+            $row["feelabel"]=Common::statusMap($this->lableMap,$row["feestatusname"],"success");
+        }
         return $row;
-        
     } 
+    protected function buildModel(&$model,&$fields,&$join) {
+        $model=new Model("$this->table as $this->alias");
+        $fields="$this->alias.*,ind.name as industry_name";
+        $join=" left join mer_industry as ind on $this->alias.industry_id=ind.id";
+        return true;
+    }
 
     //保存前验证
     public function saveValidator(&$extend,&$errmsg){

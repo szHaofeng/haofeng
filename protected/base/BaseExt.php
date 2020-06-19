@@ -82,6 +82,8 @@ class BaseExt extends Controller
         if ($id) {
             $data=$this->entity->find($id);
         }
+        $args =Req::args();
+        $data=array_merge($data,$args);
         $this->redirect("info",false,$data);
     }
 

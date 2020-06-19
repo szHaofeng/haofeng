@@ -14,14 +14,18 @@
               {if:isset($id) && $id}
               <input type="hidden" name="id" value="{$id}">
               {/if}
-
-              
               <input type="hidden" name="type" value="1">
               <input type="hidden" name="status" id="status" value="{$status}">
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-3">商户名称：</label>
                 <div class="col-md-9 col-sm-9 col-xs-9">
                   <input type="text" class="form-control" placeholder="请输入商户名称"  name="merchant_name" id="merchant_name" value="{$merchant_name}" pattern="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3">联系人：</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <input type="text" class="form-control" placeholder="请输入联系人" name="contacts" id="contacts" value="{$contacts}" pattern="required" >
                 </div>
               </div>
               <div class="form-group">
@@ -32,22 +36,26 @@
               </div>
               {set:$province=isset($province)?$province:''}{set:$city=isset($city)?$city:''}{set:$county=isset($county)?$county:''}
               {widget:name=whole action=areaWidget province=$province city=$city county=$county}
-
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-3">详细地址：</label>
                 <div class="col-md-9 col-sm-9 col-xs-9">
                   <input type="text" class="form-control" placeholder="请输入详细地址" name="addr" id="addr" value="{$addr}" pattern="required" >
                 </div>
               </div>
-
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
-            
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-3">英文名称：</label>
+              <div class="col-md-9 col-sm-9 col-xs-9">
+                <input type="text" class="form-control" placeholder="请输入商户英文名称" name="english_name" id="english_name" value="{$english_name}">
+              </div>
+            </div>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-3">所属行业：</label>
                 <div class="col-md-9 col-sm-9 col-xs-9">
-                  <select class="form-control" name="industry" id="industry" pattern="required">
-                    {widget:name=whole action=industryWidget status=0}
+                  <select class="form-control" name="industry_id" id="industry_id" pattern="required">
+                    {set:$industry_id=isset($industry_id)?$industry_id:0}
+                    {widget:name=whole action=industryWidget status=0 industry_id=$industry_id}
                   </select>
                 </div>
               </div>

@@ -18,5 +18,10 @@ class IndustryService
         }
         return $map;
     }
+    public static function IndustryName($id) {
+        $doc=(new MerindustryEntity())->findWhere("id=".$id,'name'); 
+        return $doc['name'];
+    }
+   
    
 }

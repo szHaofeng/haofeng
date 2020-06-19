@@ -19,7 +19,7 @@
             <div class="form-inline">
                 
                 <div class="form-group">
-                    <select class="form-control" name="industry" id="industry">
+                    <select class="form-control" name="industry_id" id="industry_id">
                         {widget:name=whole action=industryWidget status=0}
                     </select>
                 </div>
@@ -47,32 +47,49 @@
                             <th>#</th>
 							<th>商户名称</th>
                             <th>所属行业</th>
+                            <th>联系人</th>
                             <th>联系电话</th>
                             <th>邮箱地址</th>
 							<th>商户地址</th>
 							<th>账户余额</th>
                             <th>申请时间</th>
                             <th>审核时间</th>
+                            <th>账户状态</th>
                             <th>状态</th>
+                            
                             <th style="width: 120px; text-align: center;">操作</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {set:$area=AreaService::areasParse($data["data"])}
                         {list:items=$data["data"]}
+                     
                         <tr>
                             <td>
                                 <input type="checkbox" name="selectone[]" value="{$item['id']}">
                             </td>
                             <td>{echo:Common::gridIndex($data["page"],$key)}</td>
                             <td>{$item["merchant_name"]}</td>
-                            <td>{$itme['phone']}</td>
-                            <td>{$itme['phone']}</td>
+                            <td>{$item['industry_name']}</td>
+                            <td>{$item['contacts']}</td>
+                            <td>{$item['phone']}</td>
                             <td>{$item["email"]}</td>
-                            <td>{$item["province"]}{$item["city"]}{$item["county"]}{$item["addr"]}</td>
+                            <td>{$area[$item['province']]}{$area[$item['city']]}{$area[$item['county']]}</td>
                             <td>{$item["balance"]}</td>
                             <td>{$item["created_time"]}</td>
-                            <td>{$item["login_time"]}</td>
+                            <td>{$item["review_time"]}</td>
+                            <td><span class="label label-{$item['feelabel']}">{$item["feestatusname"]}</span></td>
                             <td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
+                            {if:$item['status']==1}
+                            <td class="text-nowrap text-center">
+                                <a href="#" class="mr-5" data-toggle="tooltip" data-original-title="查看信息" onclick="info({$item['id']},1)"> 
+                                    <i class="fa fa-lg fa-search text-primary"></i> 
+                                </a> 
+                                <a href="#" class=" mr-5" data-toggle="tooltip" data-original-title="查看并审核" onclick="info({$item['id']},2)"> 
+                                    <i class="fa fa-lg fa-edit text-primary"></i> 
+                                </a>
+                            </td>          
+                            {else:}
                             <td style="text-align: center;">
                                 <div class="dropdown">
                                     <button aria-expanded="false" data-toggle="dropdown" class="btn btn-xs btn-default btn-rounded dropdown-toggle btn-op" type="button">
@@ -84,15 +101,17 @@
                                         <li>
                                             <a class="op-edit"><i class="fa fa-fw fa-pencil"></i><span>修改</span></a>
                                         </li>
-                                        {if:$item["status"]==1}
+                                       
+                                        {if:$item["status"]==2}
                                         <li>
-                                            <a href="javascript:;" onclick="changeStatus({$item['id']},2);"><i class="fa fa-fw fa-lock"></i><span>禁止</span></a>
+                                            <a href="javascript:;" onclick="changeStatus({$item['id']},3);"><i class="fa fa-fw fa-lock"></i><span>禁止</span></a>
                                         </li>
                                         {else:}
                                         <li>
-                                            <a href="javascript:;" onclick="changeStatus({$item['id']},1);"><i class="fa fa-fw fa-unlock-alt"></i><span>允许</span></a>
+                                            <a href="javascript:;" onclick="changeStatus({$item['id']},2);"><i class="fa fa-fw fa-unlock-alt"></i><span>正常</span></a>
                                         </li>
                                         {/if}
+                                      
                                         <li class="divider"></li>
                                         <li>
                                             <a href="javascript:;" class="op-delete"><i class="fa fa-fw fa-trash"></i><span>删除</span></a>
@@ -101,6 +120,8 @@
                                     </ul>
                                 </div>
                             </td>
+                            {/if}
+                            
                         </tr>
                         {/list}
                     </tbody>
@@ -115,18 +136,21 @@
 {widget:name=public action=commandWidget con=$con width=800 height=460 title=用户}
 
 <script type="text/javascript">
-    $(function() {
+   
+    function info(id,type) {
+        if(type==1){
+            var url= "{url:/merchant/info/type/1/id/}"+id;
+        }else{
+            var url= "{url:/merchant/info/type/2/id/}"+id;
+        }
+        //alert(url);return;
+        art.dialog.open(url,{id:'edit_dialog',title:'商户信息',resize:false,width:800,height:500});
+        return false;
+    }
 
-        $("#status").val("{$status}");
-        $("#role_id").val("{$role_id}");
-        $("#dept_id").val("{$dept_id}");
+    function analysis(id) {
+        art.dialog.open("{url:/taxetp/analysis/id/}"+id,{id:'edit_dialog',title:'风控分析',resize:false,width:1000,height:600});
+        return false;
+    }
 
-        $('.op-password').on('click',function(){
-            var id=$(this).parent().parent().attr("data-refid");
-            if (id>0) {
-               open_dialog("{url:/merchant/password/password_id/}"+id,"修改密码",780,300,false);
-            }
-            return false;
-        });
-    });
 </script>
