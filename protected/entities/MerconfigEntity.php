@@ -6,8 +6,10 @@ class MerconfigEntity extends BaseEntity
     protected $alias="cf";
     protected function buildModel(&$model,&$fields,&$join) {
         $model=new Model("$this->table as $this->alias");
-        $fields="$this->alias.*,mer.merchant_name,mer.province,mer.city,mer.county";
+        $fields="$this->alias.*,mer.merchant_name,mer.province,mer.city,mer.county,ind.name as industryname";
         $join=" left join mer_merchant as mer on $this->alias.mer_id=mer.id";
+        $join.=" left join mer_industry as ind on mer.industry_id=ind.id";
+       
         return true;
     }
     //保存前验证
