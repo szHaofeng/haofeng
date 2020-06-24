@@ -1,0 +1,4 @@
+<option value="">选择商户</option>
+{list:items=MerchantService::roleMap()}
+	<option value="{$key}" {if:isset($mer_id)} {if:$mer_id==$key} selected {/if}{/if}>{$item}</option>
+{/list}

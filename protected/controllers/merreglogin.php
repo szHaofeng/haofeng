@@ -47,14 +47,6 @@ class MerregloginController extends Controller
             $this->redirect("/merchant/edit",true,$post);
         }
    }
-   /**
-    * 域名查询方法 function
-    * 参数 check 查询
-    * @return json
-    */
-   public function merlistQuery(){
-        $MerConfig = MerchantService::MerConfig();
-        echo JSON::encode($MerConfig);
-   }
+
 
 }

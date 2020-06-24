@@ -7,11 +7,9 @@
         <div class="pull-right">
             <div class="form-inline">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="ct__mer_d_merchant_name" placeholder="商户名称" value="{$ct__mer_d_merchant_name}">
+                    <input type="text" class="form-control" name="ct__mer_d_merchant_name_or_ct__domain_name" placeholder="商户名称或域名" value="{$ct__mer_d_merchant_name_or_ct__domain_name}">
 				</div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="ct__domain_name" placeholder="商户域名" value="{$ct__domain_name}">
-				</div>
+                
 				
                 <div class="form-group">
                     {widget:name=list action=statusWidget statusMap=$this->entity->statusMap}

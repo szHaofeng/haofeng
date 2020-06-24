@@ -14,41 +14,12 @@
             <input class="form-control" name="name" id="name" type="text" value="{$name}" pattern="required">
           </div>
         </div>
-	<div class="form-group">
-          <label class="col-md-3 col-sm-3 control-label">* 真实名称：</label>
-          <div class="col-md-9 col-sm-9">
-            <input class="form-control" name="username" id="username" type="text" value="{$username}" >
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 col-sm-3 control-label">* 所属部门：</label>
-          <div class="col-md-9 col-sm-9">
-            <select class="form-control" name="dept_id" id="dept_id" pattern="required">
-              {widget:name=list action=deptWidget status=0}
-            </select>
-          </div>
-        </div>
         <div class="form-group">
           <label class="col-md-3 col-sm-3 control-label">* 用户角色：</label>
           <div class="col-md-9 col-sm-9">
             <select class="form-control" name="role_id" id="role_id" pattern="required">
                 {widget:name=list action=roleWidget status=0}
             </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 col-sm-3 control-label">参与互动：</label>
-          <div class="col-md-3 col-sm-3">
-            <div class="checkbox checkbox-success">
-              <input name="is_msgofetp" id="is_msgofetp" type="checkbox" {if:isset($is_msgofetp) && $is_msgofetp} checked {/if} value="1">
-              <label for="is_msgofetp"> 企业互动 </label>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3">
-            <div class="checkbox checkbox-success">
-              <input name="is_msgofgov" id="is_msgofgov" type="checkbox" {if:isset($is_msgofgov) && $is_msgofgov} checked {/if} value="1">
-              <label for="is_msgofgov"> 政务互动 </label>
-            </div>
           </div>
         </div>
         {if:!isset($id) || !$id}

@@ -2,6 +2,7 @@
     .login-bg {
         background-image: url({url:@static/images/tax_login.jpg});
     }
+    .auth-form-wrap > .auth-form{border-radius: 4px;}
 </style>
 {echo:JS::import('dialog?skin=tinysimple');}
 {echo:JS::import('dialogtools');}
@@ -9,8 +10,8 @@
 <header class="sp-header pa-10">
     <div class="sp-logo-wrap pull-left">
         <a href="{url:/index/index}">
-            <img src="{url:@static/images/logo2.png}">
-            <span class="brand-text">区块链云平台</span>
+            <img src="{$site_logo_min}">
+            <span class="brand-text">{$site_name}</span>
         </a>
     </div>
     <div class="clearfix"></div>
@@ -20,7 +21,7 @@
         <div class="auth-form card-view">
             <div>
                 <h3 class="text-center txt-dark mb-10">
-                    <strong>{$site_full_name}</strong>
+                    <strong>{$site_name}</strong>
                 </h3>
                 <p class="text-center message">请输入你的账号信息</p>
             </div>  
@@ -62,6 +63,11 @@
 </div>
 
 <script type="text/javascript">
+$(document).bind('keyup', function(e) {
+    if (event.keyCode == 13) {
+        uslogin();
+    }
+});
     var loging=false;
     function uslogin() {
         if (loging) return false;

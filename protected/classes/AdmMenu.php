@@ -17,10 +17,16 @@ class AdmMenu
     {
         $nodes= array(
             '/admmagr/index'=> array(
-                'name'=>'用户管理','parent'=>'system','icon'=>'fa-folder'
+                'name'=>'管理员','parent'=>'system','icon'=>'fa-folder'
             ),
             '/admrole/index'=> array(
-                'name'=>'角色管理','parent'=>'system','icon'=>'fa-unlock-alt'
+                'name'=>'角色管理','parent'=>'system','icon'=>'fa-adjust'
+            ),
+            '/admrights/index'=> array(
+                'name'=>'权限列表','parent'=>'system','icon'=>'fa-sitemap'
+            ),
+            '/admin/globals'=> array(
+                'name'=>'系统配置','parent'=>'system','icon'=>'fa-cog'
             ),
             '/merchant/index'=> array(
                 'name'=>'商户列表','parent'=>'merchant','icon'=>'fa-bars'
@@ -34,17 +40,18 @@ class AdmMenu
             '/merdomain/index'=> array(
                 'name'=>'商户域名','parent'=>'merchant','icon'=>'fa-folder'
             ),
-            '/mershenhe/index'=> array(
-                'name'=>'操作记录','parent'=>'merchant','icon'=>'fa-folder'
-            ),
+            
         );
         //分组菜单
         $subMenu = array(
+            'admin' =>array('name'=>'首页','parent'=>'system','icon'=>'fa-pie-chart','url'=>'/admin/index'),
             'merchant' =>array('name'=>'商户中心','parent'=>'system','icon'=>'fa-university','url'=>''),
-            'enterprise' =>array('name'=>'企业中心','parent'=>'system','icon'=>'fa-users','url'=>''),
+            'enterprise' =>array('name'=>'企业中心','parent'=>'system','icon'=>'fa-desktop','url'=>''),
             'data' =>array('name'=>'数据中心','parent'=>'system','icon'=>'fa-database','url'=>''),
             'security' =>array('name'=>'安全中心','parent'=>'system','icon'=>'fa-shield','url'=>''),
             'system' =>array('name'=>'系统管理','parent'=>'system','icon'=>'fa-gears','url'=>''),
+            'mershenhe' =>array('name'=>'操作记录','parent'=>'system','icon'=>'fa-folder','url'=>''),
+            
         );
 
         //主菜单

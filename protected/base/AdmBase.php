@@ -14,7 +14,8 @@ class AdmBase extends BaseExt
         $menu = new AdmMenu();
         //print_r($menu->getSubMenu("system"));die();
         $this->assign('menu',$menu);
-        //$this->assign('mainMenu',$menu->getSubMenu("system"));
+        $this->assign('mainMenu',$menu->getSubMenu("system"));
+//print_r($menu->getSubMenu("system"));die;
         $currentMenu = $menu->currentMenu();
         $currentLine = $menu->getLink();
         $this->assign('currentMenu',$currentMenu);

@@ -9,9 +9,9 @@ class ManagerEntity extends BaseEntity
 
     protected function buildModel(&$model,&$fields,&$join) {
         $model=new Model("$this->table as $this->alias");
-        $fields="$this->alias.*,rle.name as rolename,dpt.name as deptname";
+        $fields="$this->alias.*,rle.name as rolename";
         $join=" left join adm_role as rle on $this->alias.role_id=rle.id";
-        $join.=" left join adm_dept as dpt on $this->alias.dept_id=dpt.id";
+     //   $join.=" left join adm_dept as dpt on $this->alias.dept_id=dpt.id";
         return true;
     }
 

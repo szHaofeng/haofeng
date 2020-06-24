@@ -206,5 +206,23 @@ class AdminController extends AdmBase
         $this->safebox->set("manager",$manager);
         echo "<script>parent.close_dialog(false);</script>";
     }
+    public function config(){
+        $this->checkFormToken();
+        $group  = Req::args('group');
+        $config = Config::getInstance();
+        if (Req::args('submit') != null) {
+            $configService = new ConfigService($config);
+            if (method_exists($configService, $group)) {
+                $result = $configService->$group();
+                if (is_array($result)) {
+                    $this->assign('message', $result['msg']);
+                } else if ($result == true) {
+                    $this->assign('message', '信息保存成功！');
+                }
+            }
+        }
+        $this->redirect("globals",false,$config->get($group));
+        
+    }
  
 }

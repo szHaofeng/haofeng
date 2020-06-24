@@ -1,0 +1,146 @@
+
+<style>
+    .control-label{padding:5px;}.form-group{margin-bottom: 0px;}
+  </style>
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+    <form action="{url:/admin/config}" class="form-horizontal" id="edit-form" name="edit-form" method="post">
+      <div class="tab-struct custom-tab-1">
+        <ul role="tablist" class="nav nav-tabs" id="tabs">
+            <li class="active">
+                <a data-toggle="tab" role="tab" href="#tab_1">基本配置</a>
+            </li>
+        </ul>
+      
+        <div class="tab-content" id="tabcontent">
+          <!-- 基本信息 -->
+            <div  id="tab_1" class="tab-pane fade active in" role="tabpanel">
+				<input type='hidden' name="group" value="globals">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                   
+						<div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">logo：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								{set:$site_logo=Common::getAvatar(isset($site_logo)?$site_logo:"",'logo.png')}
+								{widget:name=whole action=imagesWidget images=$site_logo width=60 height=60 title=logo上传 imgname=site_logo}
+							</label>
+						</div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">站点名称：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入站点名称" name="site_name" id="site_name" value="{$site_name}">
+							</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">关键字：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入关键字" name="site_keywords" id="site_keywords" value="{$site_keywords}">
+								
+							</label>
+							<label class="control-label col-md-4 col-sm-4 col-xs-4 text-left">多个使用英文的“|”分割</label>
+                        </div>
+                        <div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">描述信息：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入描述信息" name="site_description" id="site_description" value="{$site_description}">
+								
+							</label>
+							<label class="control-label col-md-4 col-sm-4 col-xs-4 text-left">多个使用英文的“|”“，”分割</label>
+                        </div>
+                        <div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2 ">备案号：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入公司/备案号" name="site_icp" id="site_icp" value="{$site_icp}">
+								
+							</label>
+							<label class="control-label col-md-4 col-sm-4 col-xs-4 text-left">例如：*有限公司/鲁ICP备*号</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">网址：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入网址" name="site_url" id="site_url" value="{$site_url}">
+								
+							</label>
+							<label class="control-label col-md-4 col-sm-4 col-xs-4 text-left">例如：http://www.baidu.com</label>
+                        </div>
+                        <div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">邮箱：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入Email地址" name="site_email" id="site_email" value="{$site_email}">
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">手机：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入手机号" name="site_mobile" id="site_mobile" value="{$site_mobile}">
+							</label>
+							
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">联系电话：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入联系电话" name="site_phone" id="site_phone" value="{$site_phone}">
+							</label>
+							
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">qq：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入qq号" name="site_qq" id="site_qq" value="{$site_qq}">
+							</label>
+							
+                        </div>
+						<div class="form-group">
+							<label class="control-label col-md-2 col-sm-2 col-xs-2">联系地址：</label>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-6 text-left">
+								<input type="text" class="form-control" placeholder="请输入联系地址" name="site_addr" id="site_addr" value="{$site_addr}">
+							</label>
+                        </div>
+				</div>
+				<div class="form-actions mt-30">
+					{token:key=form}
+					<div class="form-group">
+					  <label class="control-label col-md-2 col-sm-2 col-xs-2"></label>
+					  <div class="col-md-9 col-sm-9 col-xs-9">
+						<button type="button" class="btn btn-primary mr-20" id="btnsave">保存</button>
+					  </div>
+					</div>
+				  </div>
+            </div>
+        <!-- 基本信息 -->
+        
+      </div>
+      <div class="clearfix"></div>
+  </form>
+</div>
+<script type="text/javascript">
+function showMaxImg(obj){
+   var src=$(obj).attr("src");
+   window.parent.$("#imgModal").find("#imgshow").html("<img src='"+src+"' class='carousel-inner img-responsive img-rounded' data-dismiss='modal'>");
+   window.parent.$("#imgModal").modal({
+        keyboard: true,
+        show:true
+      });
+}
+
+    $("#btnsave").on("click",function(){
+      var remark =$("#remark").val();
+        if(remark==""){
+          swal("备注信息不能为空！");return;
+        }
+        swal({   
+        title: "您确认保存吗？",  
+        showCancelButton: true,  
+        cancelButtonText: "否",   
+        confirmButtonColor: "#76c880",   
+        confirmButtonText: "是",   
+        closeOnConfirm: false 
+      }, function(){
+        $("#edit-form").submit();
+      });
+    });
+
+
+   
+</script>

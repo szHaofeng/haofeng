@@ -4,22 +4,7 @@ class RoleEntity extends BaseEntity
     protected $table="adm_role";
     protected $table_zh="角色";
 
-    protected function parseRow($row) {
-
-        $row=parent::parseRow($row);
-
-        if (array_key_exists("is_grantofetp", $row) && $row['is_grantofetp']) 
-            $row['grantofetp']='是';
-        else
-            $row['grantofetp']=' 否';
-        if (array_key_exists("is_grantofgov", $row) && $row['is_grantofgov']) 
-            $row['grantofgov']='是';
-        else
-            $row['grantofgov']=' 否';
-
-        return $row;
-        
-    } 
+    
 
     public function deleteValidator($ids){
 
@@ -50,13 +35,7 @@ class RoleEntity extends BaseEntity
             $errmsg="角色名称 '$name' 已经被使用！";
             return false;
         }
-        if (!array_key_exists("is_grantofetp", Req::post())) {
-            $extend["is_grantofetp"]=0;
-        }
-        if (!array_key_exists("is_grantofgov", Req::post())) {
-            $extend["is_grantofgov"]=0;
-        }
-
+      
         $right = Req::args("right");
         if (is_array($right)) {
             $right = implode(',', $right);

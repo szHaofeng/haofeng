@@ -5,11 +5,12 @@ class ControllerExt implements Extension
     public function before($obj=null)
     {
         $config = Config::getInstance();
-        $obj->assign('site_name',$config->get('site_name'));
-        $obj->assign('site_full_name',$config->get('site_full_name'));
-        $obj->assign('site_gov_name',$config->get('site_gov_name'));
-        $obj->assign('site_logo_min',$config->get('site_logo_min'));
-        $obj->assign('site_logo',$config->get('site_logo'));
+        $site = $config->get('globals');
+        $obj->assign('site_name',$site['site_name']);
+        $obj->assign('site_logo_min',$site['site_logo_min']);
+        $obj->assign('site_logo',$site['site_logo']);
+
+        
     }
     public function after($obj=null)
     {

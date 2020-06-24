@@ -1,1 +1,2 @@
-{widget:name=public action=headpicWidget con=taxbureau src=$headpicSrc}
+{set:$con=str_replace('/','',$con)}
+{widget:name=public action=headpicWidget con=$con src=$headpicSrc}

@@ -1,1 +1,0 @@
-86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:7:{s:2:"id";s:7:"int(11)";s:6:"mer_id";s:7:"int(11)";s:11:"domain_name";s:12:"varchar(100)";s:12:"created_time";s:8:"datetime";s:13:"domain_prefix";s:11:"varchar(50)";s:10:"start_time";s:8:"datetime";s:8:"end_time";s:8:"datetime";}}
